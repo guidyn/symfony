@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="icon" href="{{ asset('assets/images/favicon.png') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ path('app_home') }}">Home</a></li>
+                <li>Bucket list</li>
+            </ul>
+        </nav>
+        <p class="container-fluid">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae deleniti eaque eligendi eos ipsam minus quibusdam recusandae vero voluptas voluptatibus. Assumenda culpa dolor dolorum eaque earum ex exercitationem, explicabo obcaecati. Amet cumque itaque voluptates. Aspernatur cumque eius explicabo inventore iusto minima natus officiis perspiciatis quidem quod quos, reiciendis ullam vitae. Doloremque eos expedita explicabo labore minima necessitatibus nemo nisi nulla optio, recusandae, repellendus sint, sit suscipit tempora temporibus. Adipisci aliquam animi aperiam asperiores, autem consectetur consequuntur culpa cum dicta dolore doloremque, dolores, ducimus esse iusto laborum maxime molestias nesciunt nobis nostrum nulla officia optio possimus quas qui repellendus totam veniam.</p>
+        <button type="button" class="btn btn-primary">Primary</button>
+
+        {% block body %}{% endblock %}
+        <footer>
+            <hr>
+            <p>&copy;Bucket-List - {{ "now"|date('Y') }}</p>
+        </footer>
+    </body>
+</html>
